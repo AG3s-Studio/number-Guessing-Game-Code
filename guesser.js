@@ -1,6 +1,8 @@
 let number2guess = Math.floor(Math.random()*100) + 1;
 let attempts = 0;
 let attempts2 = 0;
+
+
 const ginput = document.getElementById("guessInput");
 
 const gbutton = document.getElementById("guessBtn");
@@ -40,6 +42,8 @@ nbutton.addEventListener("click", function () {
   let g2 = ninput.value
   if (g2 === "Anthony Glenn III") {
     message2.textContent = "Congrats!"
+  } else if (!g2 || g2.trim().length === 0) {
+    message2.textContent = "Please Put Text In Your Guess."
   } else {
     message2.textContent = "Try Again!"
   }
@@ -47,3 +51,4 @@ nbutton.addEventListener("click", function () {
   attempts2++;
   attemptsText2.textContent = `Attempts: ${attempts2}`
 });
+
